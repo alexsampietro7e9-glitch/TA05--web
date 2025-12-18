@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 2</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <button class="menu-toggle">☰</button>
+
+  <nav class="sidebar">
+    <h2>Menú</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="project1.html">Project 1</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Project 2</h1>
+  </header>
+
+  <div class="item" style="max-width:700px;">
+    <p class="description">
+      In this work we find a comparison between AMD and Intel. Comparing AMD and Intel is relevant because both are the main competing companies in the processor market for personal computers, laptops and servers.
+    </p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const sidebar = document.querySelector(".sidebar");
+      const body = document.body;
+
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        body.classList.toggle("menu-open");
+      });
+    });
+  </script>
+
+</body>
+</html>

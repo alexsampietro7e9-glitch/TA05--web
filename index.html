@@ -58,6 +58,18 @@
     <p><strong>Instituto:</strong> Institut Tecnològic de Barcelona</p>
     <p><strong>Nombre:</strong> Alex Sampietro</p>
   </footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".menu-toggle");
+  const sidebar = document.querySelector(".sidebar");
+  const body = document.body;
+
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    body.classList.toggle("menu-open");
+  });
+});
+</script>
 
 </body>
 </html>

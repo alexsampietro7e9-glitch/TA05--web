@@ -1,0 +1,45 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <button class="menu-toggle">☰</button>
+
+  <nav class="sidebar">
+    <h2>Menú</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="project2.html">Project 2</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Project 1</h1>
+  </header>
+
+  <div class="item" style="max-width:700px;">
+    <p class="description">
+      In this presentation we will show you a program compatible with a form that we will also show below, to facilitate the management of a computer technician in charge of devices in an institute. The form would be designed for anyone who detects an error or failure in any of the systems, who through the survey could notify the technician, informing him about the basic information so that it can be organized.
+    </p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const sidebar = document.querySelector(".sidebar");
+      const body = document.body;
+
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        body.classList.toggle("menu-open");
+      });
+    });
+  </script>
+
+</body>
+</html>
