@@ -1,26 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Índice</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TA05 - MAIN PAGE</title>
+
+  <!-- ✅ Fuente bonita -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <h1>TA05</h1>
-    <p>Hoy es: <span id="dia"></span></p>
 
-    <script>
-        const fecha = new Date();
-        const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById("dia").textContent = fecha.toLocaleDateString('es-ES', opciones);
-    </script>
+  <!-- ✅ Botón hamburguesa -->
+  <button class="menu-toggle">☰</button>
+
+  <!-- ✅ Menú lateral -->
+  <nav class="sidebar">
+    <h2>Menú</h2>
+    <ul>
+      <li><a href="#project1">Project 1</a></li>
+      <li><a href="#project2">Project 2</a></li>
+      <li><a href="#contacto">Contactar</a></li>
+      <li><a href="https://github.com/" target="_blank">Repositorio</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✅ Capçalera -->
+  <header>
+    <h1>TA05 - MAIN PAGE</h1>
+  </header>
+
+  <!-- ✅ Galería -->
+  <div class="gallery">
+
+    <div class="item" id="project1">
+      <img src="img/Project1.png" alt="Imagen 1" />
+      <button onclick="window.location.href='project1.html'">Project 1</button>
+      <p class="description">
+        In this presentation we will show you a program compatible with a form that we will also show below, to facilitate the management of a computer technician in charge of devices in an institute. The form would be designed for anyone who detects an error or failure in any of the systems, who through the survey could notify the technician, informing him about the basic information so that it can be organized.
+      </p>
+    </div>
+
+    <div class="item" id="project2">
+      <img src="img/Project2.png" alt="Imagen 2" />
+      <button onclick="window.location.href='project2.html'">Project 2</button>
+      <p class="description">
+        In this work we find a comparison between AMD and Intel. Comparing AMD and Intel is relevant because both are the main competing companies in the processor market for personal computers, laptops and servers.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ✅ Footer -->
+  <footer class="main-footer">
+    <p><strong>Correo:</strong> alex.sampietro.7e9@itb.cat</p>
+    <p><strong>Instituto:</strong> Institut Tecnològic de Barcelona</p>
+    <p><strong>Nombre:</strong> Alex Sampietro</p>
+  </footer>
+
 </body>
 </html>
