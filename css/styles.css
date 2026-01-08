@@ -1,21 +1,26 @@
+/* ================================
+   RESET & BASE
+================================ */
+
 html, body {
-  height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #f2f2f2;
+  overflow-x: hidden;
 }
 
 body {
-  padding: 2rem;
-  margin-left: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: margin-left 0.3s ease;
 }
 
-body.menu-open {
-  margin-left: 220px;
-}
+/* ================================
+   SIDEBAR
+================================ */
 
 .menu-toggle {
   position: fixed;
@@ -33,12 +38,12 @@ body.menu-open {
 
 .sidebar {
   position: fixed;
-  left: -220px;
   top: 0;
-  width: 200px;
+  left: -260px;
+  width: 240px;
   height: 100%;
   background: #111;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem;
   color: white;
   transition: left 0.3s ease;
   z-index: 2000;
@@ -51,7 +56,6 @@ body.menu-open {
 .sidebar h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  font-size: 1.3rem;
 }
 
 .sidebar ul {
@@ -77,76 +81,66 @@ body.menu-open {
   background: #444;
 }
 
+/* ================================
+   HEADER
+================================ */
+
 header {
   background: #e5e5e5;
   padding: 1.5rem 0;
   width: 100%;
   text-align: center;
   border-radius: 0.5rem;
+  margin-top: 4rem;
   margin-bottom: 2rem;
-  position: relative;
-  z-index: 1;
 }
 
 header h1 {
-  font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  letter-spacing: 2px;
   margin: 0;
 }
 
+/* ================================
+   GALLERY
+================================ */
+
 .gallery {
   display: flex;
-  gap: 8rem;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 4rem;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
 }
 
 .item {
-  text-align: center;
-  max-width: 460px;
-  padding: 1rem;
-  border: 2px solid #ccc;
+  background: #fff;
   border-radius: 0.7rem;
-  background: #f9f9f9;
+  padding: 1rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-img {
-  width: 350px;
-  height: auto;
+.item img {
+  width: 100%;
+  max-width: 350px;
   border-radius: 0.5rem;
-}
-
-button {
-  display: block;
-  margin: 1rem auto 0;
-  padding: 0.5rem 1rem;
-  border: 2px solid black;
-  border-radius: 0.5rem;
-  background: white;
-  color: black;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s, color 0.3s;
-}
-
-button:hover {
-  background: black;
-  color: white;
 }
 
 .description {
   margin-top: 1rem;
-  max-width: 400px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #333;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.3;
+  line-height: 1.4;
 }
+
+/* ================================
+   FOOTER
+================================ */
 
 .main-footer {
   margin-top: auto;
@@ -161,3 +155,99 @@ button:hover {
 .main-footer p {
   margin: 0.4rem 0;
 }
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 70%;
+    max-width: 260px;
+    left: -100%;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  body.menu-open {
+    margin-left: 0;
+  }
+
+  .gallery {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .item img {
+    max-width: 260px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+
+  .menu-toggle {
+    font-size: 1.6rem;
+  }
+
+  header {
+    padding: 1rem 0;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .item {
+    padding: 0.8rem;
+  }
+
+  .item img {
+    max-width: 220px;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .main-footer {
+    font-size: 0.85rem;
+  }
+}
+/* ============================================================
+     RESPONSIVE – MÓVIL REAL
+     ============================================================ */
+  @media (max-width: 768px) {
+  
+    header h1 {
+      font-size: 1.6rem;
+    }
+  
+    nav a, .navbar a {
+      padding: 8px 14px;
+    }
+  
+    .card {
+      width: 90%;
+      height: auto;
+    }
+  
+    .project-page {
+      padding: 40px 15px;
+    }
+  }
