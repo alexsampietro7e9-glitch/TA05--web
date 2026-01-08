@@ -251,3 +251,64 @@ header h1 {
       padding: 40px 15px;
     }
   }
+/* ================================
+   FIX REAL PARA MÓVILES
+================================ */
+
+@media (max-width: 600px) {
+
+  /* Header más pequeño y estable */
+  header {
+    padding: 0.8rem 0.5rem;
+    margin-top: 3.5rem; /* deja espacio para el botón menú */
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    word-break: break-word;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  /* Evitar que el título empuje todo */
+  body {
+    padding: 0 0.5rem;
+  }
+
+  /* Galería en una sola columna */
+  .gallery {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  /* Items más compactos */
+  .item {
+    max-width: 95%;
+    padding: 0.8rem;
+  }
+
+  /* Imágenes fluidas */
+  .item img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Sidebar más pequeño */
+  .sidebar {
+    width: 75%;
+    left: -100%;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Botón menú más pequeño */
+  .menu-toggle {
+    font-size: 1.4rem;
+    top: 10px;
+    left: 10px;
+  }
+}
