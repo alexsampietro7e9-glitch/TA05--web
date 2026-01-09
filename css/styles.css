@@ -422,3 +422,11 @@ header {
     border-radius: 0.8rem;
   }
 }
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+body {
+  transition: opacity 0.4s;
+}

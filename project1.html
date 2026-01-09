@@ -15,6 +15,9 @@
     <ul>
       <li><a href="index.html">Volver al inicio</a></li>
       <li><a href="project2.html">Project 2</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contactar.html">Contactar</a></li>
+      <li><a href="https://github.com/" target="_blank">Repositorio</a></li>
     </ul>
   </nav>
 
@@ -34,9 +37,25 @@
       const sidebar = document.querySelector(".sidebar");
       const body = document.body;
 
-      toggle.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        body.classList.toggle("menu-open");
+      if (toggle && sidebar) {
+        toggle.addEventListener("click", () => {
+          sidebar.classList.toggle("open");
+          body.classList.toggle("menu-open");
+        });
+      }
+
+      // Transición fade en los enlaces internos
+      document.querySelectorAll('a[href]').forEach(link => {
+        if (link.hostname === window.location.hostname && !link.hasAttribute('target')) {
+          link.addEventListener('click', function(e) {
+            if (link.getAttribute('href').startsWith('#')) return;
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+              window.location = link.href;
+            }, 400);
+          });
+        }
       });
     });
   </script>

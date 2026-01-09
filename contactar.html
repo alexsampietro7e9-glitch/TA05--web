@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contactar</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <button class="menu-toggle">☰</button>
+
+  <nav class="sidebar">
+    <h2>Menú</h2>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="project1.html">Project 1</a></li>
+      <li><a href="project2.html">Project 2</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contactar.html">Contactar</a></li>
+      <li><a href="https://github.com/" target="_blank">Repositorio</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Formulario de Contacto</h1>
+  </header>
+
+  <main style="width:100%;max-width:500px;margin:auto;">
+    <form class="glass" style="padding:2rem;display:flex;flex-direction:column;gap:1.2rem;">
+      <label>
+        Nombre:
+        <input type="text" name="nombre" required>
+      </label>
+      <label>
+        Correo electrónico:
+        <input type="email" name="correo" required>
+      </label>
+      <label>
+        Teléfono:
+        <input type="tel" name="telefono" required>
+      </label>
+      <label>
+        Empresa:
+        <input type="text" name="empresa">
+      </label>
+      <label>
+        Intención de contacto:
+        <select name="intencion" required>
+          <option value="">Selecciona una opción</option>
+          <option value="consulta">Consulta</option>
+          <option value="soporte">Soporte</option>
+          <option value="colaboracion">Colaboración</option>
+          <option value="otro">Otro</option>
+        </select>
+      </label>
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <footer class="main-footer">
+    <p><strong>Correo:</strong> alex.sampietro.7e9@itb.cat</p>
+    <p><strong>Instituto:</strong> Institut Tecnològic de Barcelona</p>
+    <p><strong>Nombre:</strong> Alex Sampietro</p>
+  </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".menu-toggle");
+    const sidebar = document.querySelector(".sidebar");
+    const body = document.body;
+
+    if (toggle && sidebar) {
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        body.classList.toggle("menu-open");
+      });
+    }
+
+    // Transición fade en los enlaces internos
+    document.querySelectorAll('a[href]').forEach(link => {
+      if (link.hostname === window.location.hostname && !link.hasAttribute('target')) {
+        link.addEventListener('click', function(e) {
+          if (link.getAttribute('href').startsWith('#')) return;
+          e.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location = link.href;
+          }, 400);
+        });
+      }
+    });
+  });
+  </script>
+</body>
+</html>
