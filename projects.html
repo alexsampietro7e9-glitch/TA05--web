@@ -12,6 +12,9 @@
 
   <button class="menu-toggle glass">☰</button>
 
+  <!-- Botón de tema arriba a la derecha -->
+  <button id="theme-toggle" style="position:fixed;top:15px;right:15px;z-index:4000;font-size:1.5rem;padding:0.5rem 1rem;border-radius:0.5rem;border:none;background:#222;color:#fff;cursor:pointer;">🌙</button>
+
   <nav class="sidebar glass">
     <h2>Menú</h2>
     <ul>
@@ -102,6 +105,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  // Menú hamburguesa
   const toggle = document.querySelector(".menu-toggle");
   const sidebar = document.querySelector(".sidebar");
   const body = document.body;
@@ -126,6 +130,25 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  // Tema claro/oscuro
+  const themeBtn = document.getElementById('theme-toggle');
+  function setTheme(dark) {
+    if (dark) {
+      document.body.classList.add('dark-theme');
+      themeBtn.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      themeBtn.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    }
+  }
+  themeBtn.addEventListener('click', () => {
+    setTheme(!document.body.classList.contains('dark-theme'));
+  });
+  // Mantener tema al recargar
+  if (localStorage.getItem('theme') === 'dark') setTheme(true);
 });
 </script>
 

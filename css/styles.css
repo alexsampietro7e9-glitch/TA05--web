@@ -430,3 +430,33 @@ body.fade-out {
 body {
   transition: opacity 0.4s;
 }
+
+/* Tema oscuro */
+body.dark-theme {
+  background: linear-gradient(135deg, #18181b 0%, #22223b 100%);
+  color: #f3f3f3;
+}
+body.dark-theme .sidebar,
+body.dark-theme header,
+body.dark-theme .gallery,
+body.dark-theme .item,
+body.dark-theme .main-footer {
+  background: rgba(30, 41, 59, 0.85) !important;
+  color: #f3f3f3 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+body.dark-theme .sidebar a {
+  color: #f3f3f3 !important;
+  background: rgba(255,255,255,0.05) !important;
+}
+body.dark-theme .sidebar a:hover {
+  background: rgba(255,255,255,0.18) !important;
+  color: #ffe066 !important;
+}
+body.dark-theme .glass {
+  background: rgba(30, 41, 59, 0.65) !important;
+  color: #f3f3f3 !important;
+}
+body.dark-theme .description {
+  color: #f3f3f3 !important;
+}
