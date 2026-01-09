@@ -11,61 +11,64 @@
   <button class="menu-toggle">☰</button>
 
   <nav class="sidebar">
-    <h2>Menú</h2>
+    <h2>Menu</h2>
     <ul>
-      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="project1.html">Project 1</a></li>
       <li><a href="project2.html">Project 2</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="contactar.html">Contactar</a></li>
-      <li><a href="https://github.com/" target="_blank">Repositorio</a></li>
+      <li><a href="contactar.html">Contact</a></li>
+      <li><a href="https://github.com/" target="_blank">Repository</a></li>
     </ul>
   </nav>
 
   <header>
-    <h1>Formulario de Contacto</h1>
+    <h1>Contact Form</h1>
   </header>
 
   <main style="width:100%;max-width:500px;margin:auto;">
     <form class="glass" style="padding:2rem;display:flex;flex-direction:column;gap:1.2rem;">
       <label>
-        Nombre:
+        Name:
         <input type="text" name="nombre" required>
       </label>
       <label>
-        Correo electrónico:
+        Email:
         <input type="email" name="correo" required>
       </label>
       <label>
-        Teléfono:
+        Phone:
         <input type="tel" name="telefono" required>
       </label>
       <label>
-        Empresa:
+        Company:
         <input type="text" name="empresa">
       </label>
       <label>
-        Intención de contacto:
+        Reason for contact:
         <select name="intencion" required>
-          <option value="">Selecciona una opción</option>
-          <option value="consulta">Consulta</option>
-          <option value="soporte">Soporte</option>
-          <option value="colaboracion">Colaboración</option>
-          <option value="otro">Otro</option>
+          <option value="">Select an option</option>
+          <option value="consulta">Inquiry</option>
+          <option value="soporte">Support</option>
+          <option value="colaboracion">Collaboration</option>
+          <option value="otro">Other</option>
         </select>
       </label>
-      <button type="submit">Enviar</button>
+      <button type="submit">Send</button>
     </form>
   </main>
 
   <footer class="main-footer">
-    <p><strong>Correo:</strong> alex.sampietro.7e9@itb.cat</p>
-    <p><strong>Instituto:</strong> Institut Tecnològic de Barcelona</p>
-    <p><strong>Nombre:</strong> Alex Sampietro</p>
+    <p><strong>Email:</strong> alex.sampietro.7e9@itb.cat</p>
+    <p><strong>Institute:</strong> Institut Tecnològic de Barcelona</p>
+    <p><strong>Name:</strong> Alex Sampietro</p>
   </footer>
 
   <!-- Botón de tema arriba a la derecha -->
   <button id="theme-toggle" style="position:fixed;top:15px;right:15px;z-index:4000;font-size:1.5rem;padding:0.5rem 1rem;border-radius:0.5rem;border:none;background:#222;color:#fff;cursor:pointer;">🌙</button>
+
+  <!-- Fondo para transición fade -->
+  <div id="fade-bg"></div>
 
   <script>
   document.addEventListener("DOMContentLoaded", () => {

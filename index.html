@@ -17,13 +17,13 @@
 
   <!-- ✅ Menú lateral -->
   <nav class="sidebar">
-    <h2>Menú</h2>
+    <h2>Menu</h2>
     <ul>
       <li><a href="project1.html">Project 1</a></li>
       <li><a href="project2.html">Project 2</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="contactar.html">Contactar</a></li>
-      <li><a href="https://github.com/" target="_blank">Repositorio</a></li>
+      <li><a href="contactar.html">Contact</a></li>
+      <li><a href="https://github.com/" target="_blank">Repository</a></li>
     </ul>
   </nav>
 
@@ -37,23 +37,23 @@
 
     <!-- Project 1 -->
     <div class="item" id="project1">
-      <img src="img/Project1.png" alt="Imagen 1" />
+      <img src="img/Project1.png" alt="Image 1" />
       <button class="glass project-btn" onclick="window.location.href='project1.html'">
         <span>Project 1</span>
       </button>
       <p class="description">
-        In this presentation we will show you a program compatible with a form that we will also show below, to facilitate the management of a computer technician in charge of devices in an institute. The form would be designed for anyone who detects an error or failure in any of the systems, who through the survey could notify the technician, informing him about the basic information so that it can be organized.
+        In this presentation we will show you a program compatible with a form that we will also present below, to facilitate the management of a computer technician in charge of devices in a school. The form is designed for anyone who detects an error or failure in any of the systems, so that through the survey they can notify the technician, providing basic information to help organize the work.
       </p>
     </div>
 
     <!-- Project 2 -->
     <div class="item" id="project2">
-      <img src="img/Project2.png" alt="Imagen 2" />
+      <img src="img/Project2.png" alt="Image 2" />
       <button class="glass project-btn" onclick="window.location.href='project2.html'">
         <span>Project 2</span>
       </button>
       <p class="description">
-        In this work we find a comparison between AMD and Intel. Comparing AMD and Intel is relevant because both are the main competing companies in the processor market for personal computers, laptops and servers.
+        In this work we present a comparison between AMD and Intel. Comparing AMD and Intel is relevant because both are the main competing companies in the processor market for personal computers, laptops, and servers.
       </p>
     </div>
 
@@ -61,12 +61,15 @@
 
   <!-- ✅ Footer -->
   <footer class="main-footer">
-    <p><strong>Correo:</strong> alex.sampietro.7e9@itb.cat</p>
-    <p><strong>Instituto:</strong> Institut Tecnològic de Barcelona</p>
-    <p><strong>Nombre:</strong> Alex Sampietro</p>
+    <p><strong>Email:</strong> alex.sampietro.7e9@itb.cat</p>
+    <p><strong>Institute:</strong> Institut Tecnològic de Barcelona</p>
+    <p><strong>Name:</strong> Alex Sampietro</p>
   </footer>
 <!-- Botón de tema arriba a la derecha -->
 <button id="theme-toggle" style="position:fixed;top:15px;right:15px;z-index:4000;font-size:1.5rem;padding:0.5rem 1rem;border-radius:0.5rem;border:none;background:#222;color:#fff;cursor:pointer;">🌙</button>
+
+<!-- Fondo para transición fade -->
+<div id="fade-bg"></div>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   // Menú hamburguesa
