@@ -18,11 +18,36 @@
   <nav class="sidebar">
     <h2>Menú</h2>
     <ul>
-      <li><a href="index.html">Volver al inicio</a></li>
-      <li><a href="project1.html">Project 1</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contactar.html">Contactar</a></li>
-      <li><a href="https://github.com/" target="_blank">Repositorio</a></li>
+      <li>
+        <div class="button-wrap">
+          <a href="index.html" class="custom-button"><span>Volver al inicio</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
+      <li>
+        <div class="button-wrap">
+          <a href="project1.html" class="custom-button"><span>Project 1</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
+      <li>
+        <div class="button-wrap">
+          <a href="projects.html" class="custom-button"><span>Projects</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
+      <li>
+        <div class="button-wrap">
+          <a href="contactar.html" class="custom-button"><span>Contactar</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
+      <li>
+        <div class="button-wrap">
+          <a href="https://github.com/" target="_blank" class="custom-button"><span>Repositorio</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
     </ul>
   </nav>
 
@@ -70,6 +95,14 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.toggle("menu-open");
     });
   }
+
+  // Cerrar menú al hacer clic fuera
+  document.addEventListener("click", (e) => {
+    if (sidebar.classList.contains("open") && !sidebar.contains(e.target) && !toggle.contains(e.target)) {
+      sidebar.classList.remove("open");
+      body.classList.remove("menu-open");
+    }
+  });
 
   // Transición fade en los enlaces internos
   document.querySelectorAll('a[href]').forEach(link => {
