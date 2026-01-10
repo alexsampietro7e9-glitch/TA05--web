@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contactar</title>
+  <title>TA05 - MAIN PAGE</title>
+
+  <!-- ✅ Fuente bonita -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
+  <!-- ✅ Botón hamburguesa -->
   <div class="button-wrap">
     <button class="menu-toggle custom-button">
       <span>☰</span>
@@ -15,15 +20,10 @@
     <div class="button-shadow"></div>
   </div>
 
+  <!-- ✅ Menú lateral -->
   <nav class="sidebar">
     <h2>Menu</h2>
     <ul>
-      <li>
-        <div class="button-wrap">
-          <a href="index.html" class="custom-button"><span>Home</span></a>
-          <div class="button-shadow"></div>
-        </div>
-      </li>
       <li>
         <div class="button-wrap">
           <a href="project1.html" class="custom-button"><span>Project 1</span></a>
@@ -57,117 +57,114 @@
     </ul>
   </nav>
 
+  <!-- ✅ Capçalera -->
   <header>
-    <h1>Contact Form</h1>
+    <h1>TA05 - MAIN PAGE</h1>
   </header>
 
-  <main style="width:100%;max-width:500px;margin:auto;">
-    <form class="glass" style="padding:2rem;display:flex;flex-direction:column;gap:1.2rem;">
-      <label>
-        Name:
-        <input type="text" name="nombre" required>
-      </label>
-      <label>
-        Email:
-        <input type="email" name="correo" required>
-      </label>
-      <label>
-        Phone:
-        <input type="tel" name="telefono" required>
-      </label>
-      <label>
-        Company:
-        <input type="text" name="empresa">
-      </label>
-      <label>
-        Reason for contact:
-        <select name="intencion" required>
-          <option value="">Select an option</option>
-          <option value="consulta">Inquiry</option>
-          <option value="soporte">Support</option>
-          <option value="colaboracion">Collaboration</option>
-          <option value="otro">Other</option>
-        </select>
-      </label>
+  <!-- ✅ Galería -->
+  <div class="gallery">
+
+    <!-- Project 1 -->
+    <div class="item" id="project1">
+      <img src="img/Project1.png" alt="Image 1" />
       <div class="button-wrap">
-        <button type="submit" class="custom-button">
-          <span>Send</span>
+        <button class="glass project-btn custom-button" onclick="window.location.href='project1.html'">
+          <span>Project 1</span>
         </button>
         <div class="button-shadow"></div>
       </div>
-    </form>
-  </main>
+      <p class="description">
+        In this presentation we will show you a program compatible with a form that we will also present below, to facilitate the management of a computer technician in charge of devices in a school. The form is designed for anyone who detects an error or failure in any of the systems, so that through the survey they can notify the technician, providing basic information to help organize the work.
+      </p>
+    </div>
 
+    <!-- Project 2 -->
+    <div class="item" id="project2">
+      <img src="img/Project2.png" alt="Image 2" />
+      <div class="button-wrap">
+        <button class="glass project-btn custom-button" onclick="window.location.href='project2.html'">
+          <span>Project 2</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+      <p class="description">
+        In this work we present a comparison between AMD and Intel. Comparing AMD and Intel is relevant because both are the main competing companies in the processor market for personal computers, laptops, and servers.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ✅ Footer -->
   <footer class="main-footer">
     <p><strong>Email:</strong> alex.sampietro.7e9@itb.cat</p>
     <p><strong>Institute:</strong> Institut Tecnològic de Barcelona</p>
     <p><strong>Name:</strong> Alex Sampietro</p>
   </footer>
+<!-- Botón de tema arriba a la derecha -->
+<label class="switch">
+  <input type="checkbox" id="theme-toggle">
+  <span class="slider"></span>
+</label>
 
-  <!-- Botón de tema arriba a la derecha -->
-  <label class="switch">
-    <input type="checkbox" id="theme-toggle">
-    <span class="slider"></span>
-  </label>
+<!-- Fondo para transición fade -->
+<div id="fade-bg"></div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Menú hamburguesa
+  const toggle = document.querySelector(".menu-toggle");
+  const sidebar = document.querySelector(".sidebar");
+  const body = document.body;
 
-  <!-- Fondo para transición fade -->
-  <div id="fade-bg"></div>
+  if (toggle && sidebar) {
+    toggle.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      body.classList.toggle("menu-open");
+    });
+  }
 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Menú hamburguesa
-    const toggle = document.querySelector(".menu-toggle");
-    const sidebar = document.querySelector(".sidebar");
-    const body = document.body;
+  // Cerrar menú al hacer clic fuera
+  document.addEventListener("click", (e) => {
+    if (sidebar.classList.contains("open") && !sidebar.contains(e.target) && !toggle.contains(e.target)) {
+      sidebar.classList.remove("open");
+      body.classList.remove("menu-open");
+    }
+  });
 
-    if (toggle && sidebar) {
-      toggle.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        body.classList.toggle("menu-open");
+  // Transición fade en los enlaces internos
+  document.querySelectorAll('a[href]').forEach(link => {
+    if (link.hostname === window.location.hostname && !link.hasAttribute('target')) {
+      link.addEventListener('click', function(e) {
+        if (link.getAttribute('href').startsWith('#')) return;
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location = link.href;
+        }, 400);
       });
     }
-
-    // Cerrar menú al hacer clic fuera
-    document.addEventListener("click", (e) => {
-      if (sidebar.classList.contains("open") && !sidebar.contains(e.target) && !toggle.contains(e.target)) {
-        sidebar.classList.remove("open");
-        body.classList.remove("menu-open");
-      }
-    });
-
-    // Transición fade en los enlaces internos
-    document.querySelectorAll('a[href]').forEach(link => {
-      if (link.hostname === window.location.hostname && !link.hasAttribute('target')) {
-        link.addEventListener('click', function(e) {
-          if (link.getAttribute('href').startsWith('#')) return;
-          e.preventDefault();
-          document.body.classList.add('fade-out');
-          setTimeout(() => {
-            window.location = link.href;
-          }, 400);
-        });
-      }
-    });
-
-    // Tema claro/oscuro
-    const themeToggle = document.getElementById('theme-toggle');
-    function setTheme(dark) {
-      if (dark) {
-        document.body.classList.add('dark-theme');
-        themeToggle.checked = true;
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.body.classList.remove('dark-theme');
-        themeToggle.checked = false;
-        localStorage.setItem('theme', 'light');
-      }
-    }
-    themeToggle.addEventListener('change', () => {
-      setTheme(themeToggle.checked);
-    });
-    // Mantener tema al recargar
-    if (localStorage.getItem('theme') === 'dark') setTheme(true);
   });
-  </script>
+
+  // Tema claro/oscuro
+  const themeToggle = document.getElementById('theme-toggle');
+  function setTheme(dark) {
+    if (dark) {
+      document.body.classList.add('dark-theme');
+      themeToggle.checked = true;
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      themeToggle.checked = false;
+      localStorage.setItem('theme', 'light');
+    }
+  }
+  themeToggle.addEventListener('change', () => {
+    setTheme(themeToggle.checked);
+  });
+  // Mantener tema al recargar
+  if (localStorage.getItem('theme') === 'dark') setTheme(true);
+});
+</script>
+
 </body>
 </html>
