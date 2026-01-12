@@ -8,12 +8,7 @@
 </head>
 <body>
 
-  <div class="button-wrap">
-    <button class="menu-toggle custom-button">
-      <span>☰</span>
-    </button>
-    <div class="button-shadow"></div>
-  </div>
+  <button class="menu-toggle">☰</button>
 
   <nav class="sidebar">
     <h2>Menu</h2>
@@ -57,41 +52,43 @@
     </ul>
   </nav>
 
-  <header>
-    <h1>Contact Form</h1>
+  <header class="header-anim">
+    <h1>Ponte en Contacto</h1>
+    <p>¿Tienes un proyecto en mente o solo quieres saludar? ¡Me encantaría escucharte!</p>
   </header>
 
-  <main style="width:100%;max-width:500px;margin:auto;">
-    <form class="glass" style="padding:2rem;display:flex;flex-direction:column;gap:1.2rem;">
+  <main style="width:100%;max-width:500px;margin:auto;margin-top:8rem;">
+    <form action="mailto:alex.sampietro.7e9@itb.cat" method="post" enctype="text/plain" class="glass" style="padding:2rem;display:flex;flex-direction:column;gap:1.5rem;">
       <label>
-        Name:
-        <input type="text" name="nombre" required>
+        👤 Nombre:
+        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
       </label>
       <label>
-        Email:
-        <input type="email" name="correo" required>
+        📧 Correo electrónico:
+        <input type="email" name="correo" placeholder="tu.correo@ejemplo.com" required>
       </label>
       <label>
-        Phone:
-        <input type="tel" name="telefono" required>
+        📞 Teléfono:
+        <input type="tel" name="telefono" placeholder="+34 123 456 789" required>
       </label>
       <label>
-        Company:
-        <input type="text" name="empresa">
+        🏢 Empresa:
+        <input type="text" name="empresa" placeholder="Nombre de la empresa (opcional)">
       </label>
       <label>
-        Reason for contact:
+        💬 Razón de contacto:
         <select name="intencion" required>
-          <option value="">Select an option</option>
-          <option value="consulta">Inquiry</option>
-          <option value="soporte">Support</option>
-          <option value="colaboracion">Collaboration</option>
-          <option value="otro">Other</option>
+          <option value="">Selecciona una opción</option>
+          <option value="consulta">Consulta</option>
+          <option value="soporte">Soporte</option>
+          <option value="colaboracion">Colaboración</option>
+          <option value="otro">Otro</option>
         </select>
       </label>
       <div class="button-wrap">
-        <button type="submit" class="custom-button">
-          <span>Send</span>
+        <span class="glow"></span>
+        <button type="submit" class="glass project-btn custom-button">
+          <span>🚀 Enviar Mensaje</span>
         </button>
         <div class="button-shadow"></div>
       </div>
@@ -105,10 +102,13 @@
   </footer>
 
   <!-- Botón de tema arriba a la derecha -->
-  <label class="switch">
+  <div class="theme-toggle" style="position:fixed;top:15px;right:15px;z-index:4000;">
+    <span class="glow"></span>
     <input type="checkbox" id="theme-toggle">
-    <span class="slider"></span>
-  </label>
+    <label>
+      <span></span>
+    </label>
+  </div>
 
   <!-- Fondo para transición fade -->
   <div id="fade-bg"></div>
@@ -151,6 +151,7 @@
 
     // Tema claro/oscuro
     const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDiv = document.querySelector('.theme-toggle');
     function setTheme(dark) {
       if (dark) {
         document.body.classList.add('dark-theme');
@@ -162,7 +163,8 @@
         localStorage.setItem('theme', 'light');
       }
     }
-    themeToggle.addEventListener('change', () => {
+    themeToggleDiv.addEventListener('click', () => {
+      themeToggle.checked = !themeToggle.checked;
       setTheme(themeToggle.checked);
     });
     // Mantener tema al recargar
