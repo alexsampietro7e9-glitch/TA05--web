@@ -8,19 +8,20 @@
 </head>
 <body>
 
-  <div class="button-wrap">
-    <button class="menu-toggle custom-button">
-      <span>☰</span>
-    </button>
-    <div class="button-shadow"></div>
-  </div>
+  <button class="menu-toggle">☰</button>
 
   <nav class="sidebar">
     <h2>Menú</h2>
     <ul>
       <li>
         <div class="button-wrap">
-          <a href="index.html" class="custom-button"><span>Volver al inicio</span></a>
+          <a href="index.html" class="custom-button"><span>Home</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
+      <li>
+        <div class="button-wrap">
+          <a href="project1.html" class="custom-button"><span>Project 1</span></a>
           <div class="button-shadow"></div>
         </div>
       </li>
@@ -38,108 +39,36 @@
       </li>
       <li>
         <div class="button-wrap">
-          <a href="contactar.html" class="custom-button"><span>Contactar</span></a>
+          <a href="contactar.html" class="custom-button"><span>Contact</span></a>
           <div class="button-shadow"></div>
         </div>
       </li>
       <li>
         <div class="button-wrap">
-          <a href="https://github.com/" target="_blank" class="custom-button"><span>Repositorio</span></a>
+          <a href="https://github.com/" target="_blank" class="custom-button"><span>Repository</span></a>
           <div class="button-shadow"></div>
         </div>
       </li>
     </ul>
   </nav>
 
-  <header>
+  <header class="header-anim">
     <h1>Project 1</h1>
   </header>
 
-  <!-- Imagen principal del proyecto -->
-  <div class="item" style="max-width:700px;">
-    <img src="img/Project1.png" alt="Project 1 Image" style="width:100%; max-width:300px; border-radius:0.5rem;" />
-  </div>
-
-  <div class="item" style="max-width:700px;">
+  <div class="item" style="max-width:700px;margin-top:8rem;">
     <p class="description">
       In this presentation we will show you a program compatible with a form that we will also show below, to facilitate the management of a computer technician in charge of devices in an institute. The form would be designed for anyone who detects an error or failure in any of the systems, who through the survey could notify the technician, informing him about the basic information so that it can be organized.
     </p>
   </div>
 
-  <!-- Información adicional sobre el programa -->
-  <div class="item" style="max-width:700px;">
-    <h2>Program Description</h2>
-    <p class="description">
-      The program is a web-based application built with HTML, CSS, and JavaScript, designed to manage incident reports from users in the institute. It includes a database (simulated with local storage) to store reports, allowing the technician to view, prioritize, and resolve issues efficiently.
-    </p>
-    <img src="img/program-screenshot.png" alt="Screenshot of the management program" style="width:100%; max-width:600px; border-radius:0.5rem; margin-top:1rem;" />
-  </div>
-
-  <!-- Formulario de reporte de incidencias -->
-  <div class="item" style="max-width:700px;">
-    <h2>Incident Report Form</h2>
-    <p class="description">
-      Below is the form that users can fill out to report technical issues. It collects essential information to help the technician diagnose and fix problems quickly.
-    </p>
-    <form class="glass" style="padding:2rem;display:flex;flex-direction:column;gap:1.2rem;">
-      <label>
-        Name:
-        <input type="text" name="nombre" required>
-      </label>
-      <label>
-        Email:
-        <input type="email" name="correo" required>
-      </label>
-      <label>
-        Device Type:
-        <select name="device" required>
-          <option value="">Select device type</option>
-          <option value="computer">Computer</option>
-          <option value="laptop">Laptop</option>
-          <option value="printer">Printer</option>
-          <option value="network">Network Device</option>
-          <option value="other">Other</option>
-        </select>
-      </label>
-      <label>
-        Location:
-        <input type="text" name="location" placeholder="e.g., Classroom 101" required>
-      </label>
-      <label>
-        Problem Description:
-        <textarea name="problem" rows="4" required></textarea>
-      </label>
-      <label>
-        Urgency:
-        <select name="urgency" required>
-          <option value="">Select urgency</option>
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
-        </select>
-      </label>
-      <div class="button-wrap">
-        <button type="submit" class="custom-button">
-          <span>Submit Report</span>
-        </button>
-        <div class="button-shadow"></div>
-      </div>
-    </form>
-    <img src="img/form-example.png" alt="Example of the incident report form" style="width:100%; max-width:600px; border-radius:0.5rem; margin-top:1rem;" />
-  </div>
-
-  <!-- Footer -->
-  <footer class="main-footer">
-    <p><strong>Email:</strong> alex.sampietro.7e9@itb.cat</p>
-    <p><strong>Institute:</strong> Institut Tecnològic de Barcelona</p>
-    <p><strong>Name:</strong> Alex Sampietro</p>
-  </footer>
-
   <!-- Botón de tema arriba a la derecha -->
-  <label class="switch">
+  <div class="theme-toggle" style="position:fixed;top:15px;right:15px;z-index:4000;">
     <input type="checkbox" id="theme-toggle">
-    <span class="slider"></span>
-  </label>
+    <label>
+      <span></span>
+    </label>
+  </div>
 
   <!-- Fondo para transición fade -->
   <div id="fade-bg"></div>
@@ -182,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Tema claro/oscuro
   const themeToggle = document.getElementById('theme-toggle');
+  const themeToggleDiv = document.querySelector('.theme-toggle');
   function setTheme(dark) {
     if (dark) {
       document.body.classList.add('dark-theme');
@@ -193,7 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem('theme', 'light');
     }
   }
-  themeToggle.addEventListener('change', () => {
+  themeToggleDiv.addEventListener('click', () => {
+    themeToggle.checked = !themeToggle.checked;
     setTheme(themeToggle.checked);
   });
   // Mantener tema al recargar
