@@ -618,3 +618,88 @@ body.fade-out #fade-bg {
 body.dark-theme #fade-bg {
   background: #18181b !important;
 }
+/* ================================
+   TOGGLE SWITCH – TEMA CLARO/OSCURO
+================================ */
+
+.theme-switch {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 5000;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.theme-switch label {
+  width: 60px;
+  height: 30px;
+  background: rgba(255,255,255,0.35);
+  display: block;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: background 0.4s ease;
+}
+
+.theme-switch label::after {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.theme-switch input:checked + label {
+  background: rgba(37,99,235,0.45);
+}
+
+.theme-switch input:checked + label::after {
+  transform: translateX(30px);
+}
+/* ================================
+   LIQUID GLASS – EFECTO GLOBAL
+================================ */
+
+.glass,
+header,
+.main-footer,
+.sidebar,
+.project-btn,
+.custom-button,
+.item {
+  background: rgba(255,255,255,0.22) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  border-radius: 1.2rem !important;
+  border: 1.5px solid rgba(255,255,255,0.28) !important;
+  box-shadow: 0 8px 32px rgba(31,38,135,0.18) !important;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+.glass:hover,
+.project-btn:hover,
+.custom-button:hover {
+  background: rgba(255,255,255,0.32) !important;
+  box-shadow: 0 12px 40px rgba(31,38,135,0.25) !important;
+}
+body.dark-theme .glass,
+body.dark-theme header,
+body.dark-theme .main-footer,
+body.dark-theme .sidebar,
+body.dark-theme .item,
+body.dark-theme .project-btn,
+body.dark-theme .custom-button {
+  background: rgba(30,41,59,0.55) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45) !important;
+}
