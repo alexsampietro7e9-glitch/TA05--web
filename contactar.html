@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contactar</title>
+  <title>Contact</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
 
-  <!-- Botón hamburguesa -->
+  <!-- Hamburger button -->
   <button class="menu-toggle">☰</button>
 
   <!-- Sidebar -->
@@ -21,63 +21,62 @@
       <li><a href="project2.html">Project 2</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contactar.html">Contact</a></li>
-      <li><a href="https://github.com/" target="_blank">Repository</a></li>
     </ul>
   </nav>
 
   <!-- Header -->
   <header class="glass header-anim">
-    <h1>Ponte en Contacto</h1>
-    <p>¿Tienes un proyecto en mente o solo quieres saludar? ¡Me encantaría escucharte!</p>
+    <h1>Contact</h1>
+    <p>If you have a project in mind or would like to get in touch, feel free to send a message.</p>
   </header>
 
-  <!-- Formulario -->
+  <!-- Form -->
   <main style="width:100%;max-width:500px;margin:auto;margin-top:8rem;">
     <form action="https://formsubmit.co/alex.sampietro.7e9@itb.cat" 
       method="POST" 
       class="glass" 
       style="padding:2rem;display:flex;flex-direction:column;gap:1.5rem;">
 
-      <!-- Campos ocultos -->
+      <!-- Hidden fields -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_subject" value="Nuevo mensaje desde tu web">
+      <input type="hidden" name="_subject" value="New message from your website">
 
       <label>
-        👤 Nombre:
-        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+        Full Name:
+        <input type="text" name="nombre" placeholder="Enter your full name" required>
       </label>
 
       <label>
-        📧 Correo electrónico:
-        <input type="email" name="correo" placeholder="tu.correo@ejemplo.com" required>
+        Email Address:
+        <input type="email" name="correo" placeholder="your.email@example.com" required>
       </label>
 
       <label>
-        📞 Teléfono:
+        Phone Number:
         <input type="tel" name="telefono" placeholder="+34 123 456 789" required>
       </label>
 
       <label>
-        🏢 Empresa:
-        <input type="text" name="empresa" placeholder="Nombre de la empresa (opcional)">
+        Company:
+        <input type="text" name="empresa" placeholder="Company name (optional)">
       </label>
 
       <label>
-        💬 Razón de contacto:
+        Reason for Contact:
         <select name="intencion" required>
-          <option value="">Selecciona una opción</option>
-          <option value="consulta">Consulta</option>
-          <option value="soporte">Soporte</option>
-          <option value="colaboracion">Colaboración</option>
-          <option value="otro">Otro</option>
+          <option value="">Select an option</option>
+          <option value="consulta">General Inquiry</option>
+          <option value="soporte">Technical Support</option>
+          <option value="colaboracion">Collaboration</option>
+          <option value="otro">Other</option>
         </select>
       </label>
 
       <div class="button-wrap">
         <span class="glow"></span>
         <button type="submit" class="glass project-btn custom-button">
-          <span>🚀 Enviar Mensaje</span>
+          <span>Submit Message</span>
         </button>
       </div>
 
@@ -91,20 +90,20 @@
     <p><strong>Name:</strong> Alex Sampietro</p>
   </footer>
 
-  <!-- Toggle de tema -->
+  <!-- Theme toggle -->
   <div class="theme-switch" style="position:fixed;top:15px;right:15px;z-index:4000;">
     <input type="checkbox" id="theme-toggle">
     <label for="theme-toggle"></label>
   </div>
 
-  <!-- Fondo fade -->
+  <!-- Fade background -->
   <div id="fade-bg"></div>
 
   <!-- SCRIPT -->
   <script>
   document.addEventListener("DOMContentLoaded", () => {
 
-    /* ---------------- MENÚ ---------------- */
+    /* ---------------- MENU ---------------- */
     const toggle = document.querySelector(".menu-toggle");
     const sidebar = document.querySelector(".sidebar");
     const body = document.body;
@@ -114,7 +113,7 @@
       body.classList.toggle("menu-open");
     });
 
-    /* ---------------- CERRAR MENÚ AL CLICAR FUERA ---------------- */
+    /* ---------------- CLOSE MENU ON OUTSIDE CLICK ---------------- */
     document.addEventListener("click", (e) => {
       if (
         sidebar.classList.contains("open") &&
@@ -138,7 +137,7 @@
       }
     });
 
-    /* ---------------- TEMA CLARO/OSCURO ---------------- */
+    /* ---------------- THEME SWITCH ---------------- */
     const themeToggle = document.getElementById("theme-toggle");
 
     function setTheme(dark) {
