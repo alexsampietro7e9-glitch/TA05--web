@@ -1,132 +1,439 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 2</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos - Administración de Sistemas y Redes</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<div class="theme-switch"> <input type="checkbox" id="theme-toggle"> <label for="theme-toggle"></label> </div>
 <body>
 
-  <button class="menu-toggle">☰</button>
+  <button class="menu-toggle glass">☰</button>
+
+  <!-- Botón de tema arriba a la derecha -->
+  <div class="theme-toggle" style="position:fixed;top:15px;right:15px;z-index:4000;">
+    <input type="checkbox" id="theme-toggle">
+    <label>
+      <span></span>
+    </label>
+  </div>
 
   <nav class="sidebar glass">
     <h2>Menú</h2>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="project1.html">Project 1</a></li>
-      <li><a href="project2.html">Project 2</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contactar.html">Contact</a></li>
+      <li>
+        <div class="button-wrap">
+          <a href="index.html" class="custom-button"><span>Home</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
+      <li>
+        <div class="button-wrap">
+          <a href="project1.html" class="custom-button"><span>Project 1</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
+      <li>
+        <div class="button-wrap">
+          <a href="project2.html" class="custom-button"><span>Project 2</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
+      <li>
+        <div class="button-wrap">
+          <a href="projects.html" class="custom-button"><span>Projects</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
+      <li>
+        <div class="button-wrap">
+          <a href="contactar.html" class="custom-button"><span>Contact</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
+      <li>
+        <div class="button-wrap">
+          <a href="https://github.com/" target="_blank" class="custom-button"><span>Repository</span></a>
+          <div class="button-shadow"></div>
+        </div>
+      </li>
     </ul>
   </nav>
 
-  <!-- CABECERA -->
   <header class="glass header-anim">
-    <h1>Project 2</h1>
-    <p>Comparativa entre AMD e Intel</p>
+    <h1>Proyectos: Administración de Sistemas y Redes</h1>
   </header>
 
-  <!-- CONTENIDO -->
-  <main style="max-width:1300px;width:90%;margin:auto;margin-top:7rem;">
+  <main class="project-page">
+    <div class="gallery glass">
 
-    <div class="item glass" style="padding:3rem;border-width:2px;width:100%;max-width:1100px;margin:auto;">
-      <span class="glow"></span>
+      <div class="item glass">
+        <span class="glow"></span>
+        <div class="inner">
+          <footer class="content">
+            <p class="description">Diseño y documentación de la topología física y lógica de una red corporativa, incluyendo VLANs y segmentación.</p>
+          </footer>
+          <header>
+            <img src="img/projects-1.svg" alt="Diagrama de red con router y switches" />
+            <h2>Topología de red</h2>
+          </header>
+        </div>
+      </div>
 
-      <header style="text-align:center;margin-bottom:1.5rem;">
-        <img src="img/Project2.png" alt="Project 2" style="width:100%;max-width:550px;border-radius:1.2rem;">
-        <h2 style="margin-top:1.2rem;">AMD vs Intel</h2>
-      </header>
+      <div class="item glass">
+        <span class="glow"></span>
+        <div class="inner">
+          <footer class="content">
+            <p class="description">Instalación y configuración de servidores Linux/Windows para servicios críticos (DNS, DHCP, Active Directory).</p>
+          </footer>
+          <header>
+            <img src="img/projects-2.svg" alt="Servidor con icono de nube" />
+            <h2>Implementación de servidores</h2>
+          </header>
+        </div>
+      </div>
 
-      <p class="description" style="font-size:1.2rem;line-height:1.85;max-width:1000px;margin:auto;">
-        Este proyecto analiza en profundidad las diferencias entre los procesadores AMD e Intel, dos de los principales
-        referentes del mercado. Se estudian aspectos como rendimiento en juegos, tareas de productividad, multitarea,
-        consumo energético y relación calidad-precio, ofreciendo una visión clara y actualizada del panorama tecnológico.
-      </p>
+      <div class="item glass">
+        <span class="glow"></span>
+        <div class="inner">
+          <footer class="content">
+            <p class="description">Despliegue de herramientas de monitorización (Zabbix, Nagios, Prometheus) y configuración de alertas.</p>
+          </footer>
+          <header>
+            <img src="img/projects-3.svg" alt="Monitorización con gráficas" />
+            <h2>Monitorización y alertas</h2>
+          </header>
+        </div>
+      </div>
 
-      <p class="description" style="font-size:1.2rem;line-height:1.85;max-width:1000px;margin:1.5rem auto 0;">
-        También se revisa la evolución de ambas marcas en los últimos años, cómo han cambiado sus arquitecturas y qué
-        impacto han tenido en el mercado doméstico y profesional. El objetivo es ayudar al usuario a elegir el procesador
-        que mejor se adapta a sus necesidades reales, ya sea para gaming, trabajo profesional o equipos de bajo consumo.
-      </p>
+      <div class="item glass">
+        <span class="glow"></span>
+        <div class="inner">
+          <header>
+            <img src="img/projects-4.svg" alt="Firewall y candado" />
+            <h2>Seguridad perimetral</h2>
+          </header>
+          <footer class="content">
+            <p class="description">Configuración de firewalls y políticas de acceso para proteger la red y controlar tráfico entrante/saliente.</p>
+          </footer>
+        </div>
+      </div>
 
-      <!-- BOTONES -->
-      <div class="button-wrap" style="margin-top:2.5rem;text-align:center;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
+      <div class="item glass">
+        <span class="glow"></span>
+        <div class="inner">
+          <header>
+            <img src="img/projects-5.svg" alt="Cables y conector RJ45" />
+            <h2>Cableado estructurado</h2>
+          </header>
+          <footer class="content">
+            <p class="description">Planificación e instalación de cableado CAT6/CAT6A, etiquetado y pruebas de certificación.</p>
+          </footer>
+        </div>
+      </div>
 
-        <!-- Botón volver -->
-        <button class="glass project-btn custom-button" onclick="window.location.href='index.html'">
-          <span>Volver al inicio</span>
-        </button>
+      <div class="item glass">
+        <span class="glow"></span>
+        <div class="inner">
+          <header>
+            <img src="img/projects-6.svg" alt="Backup en la nube" />
+            <h2>Copias de seguridad</h2>
+          </header>
+          <footer class="content">
+            <p class="description">Estrategias de backup y recuperación (on-prem, cloud), pruebas de restauración y políticas RPO/RTO.</p>
+          </footer>
+        </div>
+      </div>
 
-        <!-- Botón GitHub -->
-        <button class="glass project-btn custom-button" onclick="window.location.href='https://github.com/alexsampietro7e9-glitch/Project-2.git'">
-          <span>Ver repositorio en GitHub</span>
-        </button>
+      <div class="item glass">
+        <span class="glow"></span>
+        <div class="inner">
+          <header>
+            <img src="img/projects-7.svg" alt="Icono de virtualización" />
+            <h2>Virtualización</h2>
+          </header>
+          <footer class="content">
+            <p class="description">Diseño e implementación de infraestructuras virtualizadas con VMware o Proxmox para consolidación de recursos.</p>
+          </footer>
+        </div>
+      </div>
 
+      <div class="item glass">
+        <span class="glow"></span>
+        <div class="inner">
+          <header>
+            <img src="img/projects-8.svg" alt="Cloud y sincronización" />
+            <h2>Servicios en la nube</h2>
+          </header>
+          <footer class="content">
+            <p class="description">Migración y administración de servicios en la nube (Azure, AWS) y configuración de redes híbridas.</p>
+          </footer>
+        </div>
+      </div>
+
+      <div class="item glass">
+        <span class="glow"></span>
+        <div class="inner">
+          <header>
+            <img src="img/projects-9.svg" alt="Autenticación y candado" />
+            <h2>Gestión de identidades</h2>
+          </header>
+          <footer class="content">
+            <p class="description">Implementación de control de acceso (LDAP/AD), SSO y políticas de autenticación multifactor.</p>
+          </footer>
+        </div>
+      </div>
+
+      <div class="item glass">
+        <span class="glow"></span>
+        <div class="inner">
+          <header>
+            <img src="img/projects-10.svg" alt="Documentación y checklist" />
+            <h2>Automatización y documentación</h2>
+          </header>
+          <footer class="content">
+            <p class="description">Automatización de tareas con Ansible/Shell y creación de guías y runbooks para operaciones repetibles.</p>
+          </footer>
+        </div>
       </div>
 
     </div>
-
   </main>
 
-  <!-- FOOTER -->
+  <!-- Fondo para transición fade -->
+  <div id="fade-bg"></div>
+
   <footer class="main-footer glass">
-    <p><strong>Email:</strong> alex.sampietro.7e9@itb.cat</p>
-    <p><strong>Institute:</strong> Institut Tecnològic de Barcelona</p>
-    <p><strong>Name:</strong> Alex Sampietro</p>
+    <p><strong>Correo:</strong> alex.sampietro.7e9@itb.cat</p>
+    <p><strong>Instituto:</strong> Institut Tecnològic de Barcelona</p>
+    <p><strong>Nombre:</strong> Alex Sampietro</p>
   </footer>
 
-  <!-- TOGGLE (NO SE HA ELIMINADO) -->
-  <div class="theme-switch" style="position:fixed;top:15px;right:15px;">
-    <input type="checkbox" id="theme-toggle">
-    <label for="theme-toggle"></label>
-  </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Menú hamburguesa
+  const toggle = document.querySelector(".menu-toggle");
+  const sidebar = document.querySelector(".sidebar");
+  const body = document.body;
 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-
-    const toggle = document.querySelector(".menu-toggle");
-    const sidebar = document.querySelector(".sidebar");
-    const body = document.body;
-
+  if (toggle && sidebar) {
     toggle.addEventListener("click", () => {
       sidebar.classList.toggle("open");
       body.classList.toggle("menu-open");
     });
+  }
 
-    /* Cerrar menú al clicar fuera */
-    document.addEventListener("click", (e) => {
-      if (
-        sidebar.classList.contains("open") &&
-        !sidebar.contains(e.target) &&
-        !toggle.contains(e.target)
-      ) {
-        sidebar.classList.remove("open");
-        body.classList.remove("menu-open");
-      }
-    });
+  // Cerrar menú al hacer clic fuera
+  document.addEventListener("click", (e) => {
+    if (sidebar.classList.contains("open") && !sidebar.contains(e.target) && !toggle.contains(e.target)) {
+      sidebar.classList.remove("open");
+      body.classList.remove("menu-open");
+    }
+  });
 
-    const themeToggle = document.getElementById("theme-toggle");
+  // Transición fade en los enlaces internos
+  document.querySelectorAll('a[href]').forEach(link => {
+    if (link.hostname === window.location.hostname && !link.hasAttribute('target')) {
+      link.addEventListener('click', function(e) {
+        if (link.getAttribute('href').startsWith('#')) return;
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location = link.href;
+        }, 400);
+      });
+    }
+  });
 
-    function setTheme(dark) {
-      if (dark) {
-        document.body.classList.add("dark-theme");
-        themeToggle.checked = true;
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.body.classList.remove("dark-theme");
-        themeToggle.checked = false;
-        localStorage.setItem("theme", "light");
+  // Pointer tracking for glow effect
+  const $cards = document.querySelectorAll(".item");
+  $cards.forEach($card => {
+    const cardUpdate = (e) => {
+      const position = pointerPositionRelativeToElement($card, e);
+      const [px, py] = position.pixels;
+      const [perx, pery] = position.percent;
+      const [dx, dy] = distanceFromCenter($card, px, py);
+      const edge = closenessToEdge($card, px, py);
+      const angle = angleFromPointerEvent($card, dx, dy);
+      $card.style.setProperty('--pointer-x', `${round(perx)}%`);
+      $card.style.setProperty('--pointer-y', `${round(pery)}%`);
+      $card.style.setProperty('--pointer-°', `${round(angle)}deg`);
+      $card.style.setProperty('--pointer-d', `${round(edge * 100)}`);
+      $card.classList.remove('animating');
+    };
+    $card.addEventListener("pointermove", cardUpdate);
+  });
+
+  const centerOfElement = ($el) => {
+    const { left, top, width, height } = $el.getBoundingClientRect();
+    return [width / 2, height / 2];
+  };
+
+  const pointerPositionRelativeToElement = ($el, e) => {
+    const pos = [e.clientX, e.clientY];
+    const { left, top, width, height } = $el.getBoundingClientRect();
+    const x = pos[0] - left;
+    const y = pos[1] - top;
+    const px = clamp((100 / width) * x);
+    const py = clamp((100 / height) * y);
+    return { pixels: [x, y], percent: [px, py] };
+  };
+
+  const angleFromPointerEvent = ($el, dx, dy) => {
+    let angleRadians = 0;
+    let angleDegrees = 0;
+    if (dx !== 0 || dy !== 0) {
+      angleRadians = Math.atan2(dy, dx);
+      angleDegrees = angleRadians * (180 / Math.PI) + 90;
+      if (angleDegrees < 0) {
+        angleDegrees += 360;
       }
     }
+    return angleDegrees;
+  };
 
-    themeToggle.addEventListener("change", () => setTheme(themeToggle.checked));
+  const distanceFromCenter = ($card, x, y) => {
+    const [cx, cy] = centerOfElement($card);
+    return [x - cx, y - cy];
+  };
 
-    if (localStorage.getItem("theme") === "dark") setTheme(true);
+  const closenessToEdge = ($card, x, y) => {
+    const [cx, cy] = centerOfElement($card);
+    const [dx, dy] = distanceFromCenter($card, x, y);
+    let k_x = Infinity;
+    let k_y = Infinity;
+    if (dx !== 0) {
+      k_x = cx / Math.abs(dx);
+    }
+    if (dy !== 0) {
+      k_y = cy / Math.abs(dy);
+    }
+    return clamp((1 / Math.min(k_x, k_y)), 0, 1);
+  };
 
+  const round = (value, precision = 3) => parseFloat(value.toFixed(precision));
+
+  const clamp = (value, min = 0, max = 100) => Math.min(Math.max(value, min), max);
+
+  setTimeout(() => {
+    playAnimation();
+  }, 500);
+
+  function easeOutCubic(x) {
+    return 1 - Math.pow(1 - x, 3);
+  }
+  function easeInCubic(x) {
+    return x * x * x;
+  }
+
+  function animateNumber(options) {
+    const {
+      startValue = 0,
+      endValue = 100,
+      duration = 1000,
+      delay = 0,
+      onUpdate = () => {},
+      ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+      onStart = () => {},
+      onEnd = () => {},
+    } = options;
+
+    const startTime = performance.now() + delay;
+
+    function update() {
+      const currentTime = performance.now();
+      const elapsed = currentTime - startTime;
+      const t = Math.min(elapsed / duration, 1);
+      const easedValue = startValue + (endValue - startValue) * ease(t);
+      onUpdate(easedValue);
+
+      if (t < 1) {
+        requestAnimationFrame(update);
+      } else if (t >= 1) {
+        onEnd();
+      }
+    }
+    
+    setTimeout(() => {
+      onStart();
+      requestAnimationFrame(update);
+    }, delay);
+  }
+
+  const playAnimation = () => {
+    const $card = $cards[0];
+    const angleStart = 110;
+    const angleEnd = 465;
+    $card.style.setProperty('--pointer-°', `${angleStart}deg`);
+    $card.classList.add('animating');
+    animateNumber({
+      ease: easeOutCubic,
+      duration: 500,
+      onUpdate: (v) => {
+        $card.style.setProperty('--pointer-d', v);
+      }
+    });
+    animateNumber({
+      ease: easeInCubic,
+      delay: 0,
+      duration: 1500,
+      endValue: 50,
+      onUpdate: (v) => {
+        const d = (angleEnd - angleStart) * (v / 100) + angleStart;
+        $card.style.setProperty('--pointer-°', `${d}deg`);
+      }
+    });
+    animateNumber({
+      ease: easeOutCubic,
+      delay: 1500,
+      duration: 2250,
+      startValue: 50,
+      endValue: 100,
+      onUpdate: (v) => {
+        const d = (angleEnd - angleStart) * (v / 100) + angleStart;
+        $card.style.setProperty('--pointer-°', `${d}deg`);
+      }
+    });
+    animateNumber({
+      ease: easeInCubic,
+      duration: 1500,
+      delay: 2500,
+      startValue: 100,
+      endValue: 0,
+      onUpdate: (v) => {
+        $card.style.setProperty('--pointer-d', v);
+      },
+      onEnd: () => {
+        $card.classList.remove('animating');
+      }
+    });
+  };
+
+  // Tema claro/oscuro
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeToggleDiv = document.querySelector('.theme-toggle');
+  function setTheme(dark) {
+    if (dark) {
+      document.body.classList.add('dark-theme');
+      themeToggle.checked = true;
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      themeToggle.checked = false;
+      localStorage.setItem('theme', 'light');
+    }
+  }
+  themeToggleDiv.addEventListener('click', () => {
+    themeToggle.checked = !themeToggle.checked;
+    setTheme(themeToggle.checked);
   });
-  </script>
+  // Mantener tema al recargar
+  if (localStorage.getItem('theme') === 'dark') setTheme(true);
+});
+</script>
 
 </body>
 </html>
