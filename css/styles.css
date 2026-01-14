@@ -1,19 +1,6 @@
-@property --angle-1 {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: -75deg;
-}
-
-@property --angle-2 {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: -45deg;
-}
-
-:root {
-  --anim--hover-time: 400ms;
-  --anim--hover-ease: cubic-bezier(0.25, 1, 0.5, 1);
-}
+/* ================================
+   RESET & BASE
+================================ */
 
 html, body {
   margin: 0;
@@ -41,83 +28,24 @@ body {
 ================================ */
 
 .menu-toggle {
-  /* Basic Styling */
-  --border-width: clamp(1px, 0.0625em, 4px);
-  all: unset;
-  cursor: pointer;
   position: fixed;
   top: 24px;
   left: 24px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  pointer-events: auto;
-  z-index: 11;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
-  border-radius: 999vw;
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0 0 0 rgba(255, 255, 255, 1);
-  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
   font-size: 2.2rem;
-  color: rgba(50, 50, 50, 1);
+  background: rgba(255,255,255,0.35);
+  color: #222;
+  border: none;
   padding: 0.5rem 1rem;
-  text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .menu-toggle:hover {
-  transform: scale(0.975);
-  backdrop-filter: blur(0.01em);
-  -webkit-backdrop-filter: blur(0.01em);
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
-    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
-    0 0 0 0 rgba(255, 255, 255, 1);
-  text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.12);
-}
-
-.menu-toggle::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  border-radius: 999vw;
-  width: calc(100% + var(--border-width));
-  height: calc(100% + var(--border-width));
-  top: calc(0% - var(--border-width) / 2);
-  left: calc(0% - var(--border-width) / 2);
-  padding: var(--border-width);
-  box-sizing: border-box;
-  background: conic-gradient(
-      from var(--angle-1) at 50% 50%,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0) 5% 40%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0) 60% 95%,
-      rgba(0, 0, 0, 0.5)
-    ),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease),
-    --angle-1 500ms ease;
-  box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
-}
-
-.menu-toggle:hover::after {
-  --angle-1: -125deg;
-}
-
-.menu-toggle:active::after {
-  --angle-1: -75deg;
+  background: rgba(255,255,255,0.55);
+  color: #2563eb;
 }
 
 .sidebar {
@@ -161,84 +89,22 @@ body {
 }
 
 .sidebar a {
-  /* Basic Styling */
-  --border-width: clamp(1px, 0.0625em, 4px);
-  cursor: pointer;
-  position: relative;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  pointer-events: auto;
-  z-index: 3;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
-  border-radius: 999vw;
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0 0 0 rgba(255, 255, 255, 1);
-  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
+  color: #222;
   text-decoration: none;
+  font-size: 1.13rem;
   display: block;
   padding: 0.7rem 1.2rem;
+  border-radius: 0.7rem;
+  background: rgba(255,255,255,0.18);
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: rgba(50, 50, 50, 1);
-  font-size: 1.13rem;
-  text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
 }
 
 .sidebar a:hover {
-  transform: scale(0.975);
-  backdrop-filter: blur(0.01em);
-  -webkit-backdrop-filter: blur(0.01em);
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
-    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
-    0 0 0 0 rgba(255, 255, 255, 1);
-  text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.12);
-}
-
-.sidebar a::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  border-radius: 999vw;
-  width: calc(100% + var(--border-width));
-  height: calc(100% + var(--border-width));
-  top: calc(0% - var(--border-width) / 2);
-  left: calc(0% - var(--border-width) / 2);
-  padding: var(--border-width);
-  box-sizing: border-box;
-  background: conic-gradient(
-      from var(--angle-1) at 50% 50%,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0) 5% 40%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0) 60% 95%,
-      rgba(0, 0, 0, 0.5)
-    ),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease),
-    --angle-1 500ms ease;
-  box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
-}
-
-.sidebar a:hover::after {
-  --angle-1: -125deg;
-}
-
-.sidebar a:active::after {
-  --angle-1: -75deg;
+  background: rgba(37,99,235,0.13);
+  color: #2563eb;
+  font-weight: 600;
 }
 
 /* ================================
@@ -247,20 +113,16 @@ body {
 
 header {
   background: rgba(255,255,255,0.55);
-  padding: 1.5rem 0 1rem 0;
+  padding: 2.5rem 0 1.5rem 0;
   width: 100%;
   text-align: center;
-  border-radius: 0 0 1.5rem 1.5rem;
-  margin: 0;
+  border-radius: 1.5rem;
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
   border: 2px solid rgba(255,255,255,0.18);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
 }
 
 header h1 {
@@ -270,89 +132,6 @@ header h1 {
   letter-spacing: 1.5px;
   color: #222;
   font-family: 'SF Pro Display', 'Montserrat', 'Poppins', Arial, sans-serif;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #666;
-  margin: 0.5rem 0 0 0;
-  font-weight: 400;
-  text-align: center;
-}
-
-.header-anim {
-  animation: headerFadeIn 1s ease-out;
-}
-
-@keyframes headerFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================================
-   CONTACT FORM
-================================ */
-
-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-weight: 500;
-  color: #333;
-  font-size: 1rem;
-}
-
-form input, form select {
-  padding: 0.875rem 1rem;
-  border: none;
-  border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #222;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: all 0.3s ease;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-form input:focus, form select:focus {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(59, 130, 246, 0.2);
-  outline: none;
-  transform: scale(1.02);
-}
-
-form input::placeholder, form select {
-  color: #888;
-}
-
-form select {
-  cursor: pointer;
-}
-
-body.dark-theme form label {
-  color: #f3f3f3;
-}
-
-body.dark-theme form input, body.dark-theme form select {
-  background: rgba(255, 255, 255, 0.05);
-  color: #f3f3f3;
-}
-
-body.dark-theme form input:focus, body.dark-theme form select:focus {
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(59, 130, 246, 0.3);
-}
-
-body.dark-theme form input::placeholder {
-  color: #aaa;
 }
 
 /* ================================
@@ -372,11 +151,6 @@ body.dark-theme form input::placeholder {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
-  margin-top: 8rem;
-}
-
-.project-page {
-  margin-top: 8rem;
 }
 
 .item {
@@ -540,361 +314,32 @@ body.dark-theme form input::placeholder {
    BUTTONS
 ================================ */
 
-.button-wrap .custom-button {
-  /* Basic Styling */
-  --border-width: clamp(1px, 0.0625em, 4px);
-  all: unset;
-  cursor: pointer;
-  position: relative;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  pointer-events: auto;
-  z-index: 3;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
-  border-radius: 999vw;
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0 0 0 rgba(255, 255, 255, 1);
-  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-}
-
-.button-wrap .custom-button:hover {
-  transform: scale(0.975);
-  backdrop-filter: blur(0.01em);
-  -webkit-backdrop-filter: blur(0.01em);
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
-    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
-    0 0 0 0 rgba(255, 255, 255, 1);
-}
-
-.button-wrap .custom-button span {
-  position: relative;
-  display: block;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  font-family: "Inter", sans-serif;
-  letter-spacing: -0.05em;
-  font-weight: 500;
-  font-size: 1em;
-  color: rgba(50, 50, 50, 1);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-  padding-inline: 1.5em;
-  padding-block: 0.875em;
-}
-
-body.dark-theme .button-wrap .custom-button span {
-  color: #f3f3f3;
-  text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.3);
-}
-
-.button-wrap .custom-button:hover span {
-  text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.12);
-}
-
-.button-wrap .custom-button span::after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: 1;
-  width: calc(100% - var(--border-width));
-  height: calc(100% - var(--border-width));
-  top: calc(0% + var(--border-width) / 2);
-  left: calc(0% + var(--border-width) / 2);
-  box-sizing: border-box;
-  border-radius: 999vw;
-  overflow: clip;
-  background: linear-gradient(
-    var(--angle-2),
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 40% 50%,
-    rgba(255, 255, 255, 0) 55%
-  );
-  z-index: 3;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  background-size: 200% 200%;
-  background-position: 0% 50%;
-  background-repeat: no-repeat;
-  transition: background-position calc(var(--anim--hover-time) * 1.25)
-      var(--anim--hover-ease),
-    --angle-2 calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease);
-}
-
-.button-wrap .custom-button:hover span::after {
-  background-position: 25% 50%;
-}
-
-.button-wrap .custom-button:active span::after {
-  background-position: 50% 15%;
-  --angle-2: -15deg;
-}
-
-.button-wrap .custom-button::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  border-radius: 999vw;
-  width: calc(100% + var(--border-width));
-  height: calc(100% + var(--border-width));
-  top: calc(0% - var(--border-width) / 2);
-  left: calc(0% - var(--border-width) / 2);
-  padding: var(--border-width);
-  box-sizing: border-box;
-  background: conic-gradient(
-      from var(--angle-1) at 50% 50%,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0) 5% 40%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0) 60% 95%,
-      rgba(0, 0, 0, 0.5)
-    ),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease),
-    --angle-1 500ms ease;
-  box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
-}
-
-.button-wrap .custom-button:hover::after {
-  --angle-1: -125deg;
-}
-
-.button-wrap .custom-button:active::after {
-  --angle-1: -75deg;
-}
-
-.button-wrap {
-  position: relative;
-  z-index: 2;
-  border-radius: 999vw;
-  background: transparent;
-  pointer-events: none;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-}
-
-.button-wrap .glow {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.25s ease-out;
-  z-index: -1;
-  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.3) 0%, transparent 70%);
-}
-
-.button-wrap:hover .glow {
-  opacity: 1;
-}
-
-.button-shadow {
-  --shadow-cuttoff-fix: 2em;
-  position: absolute;
-  width: calc(100% + var(--shadow-cuttoff-fix));
-  height: calc(100% + var(--shadow-cuttoff-fix));
-  top: calc(0% - var(--shadow-cuttoff-fix) / 2);
-  left: calc(0% - var(--shadow-cuttoff-fix) / 2);
-  filter: blur(clamp(2px, 0.125em, 12px));
-  -webkit-filter: blur(clamp(2px, 0.125em, 12px));
-  -moz-filter: blur(clamp(2px, 0.125em, 12px));
-  -ms-filter: blur(clamp(2px, 0.125em, 12px));
-  overflow: visible;
-  pointer-events: none;
-}
-
-.button-shadow::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  border-radius: 999vw;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
-  width: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
-  height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
-  top: calc(var(--shadow-cuttoff-fix) - 0.5em);
-  left: calc(var(--shadow-cuttoff-fix) - 0.875em);
-  padding: 0.125em;
-  box-sizing: border-box;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-  overflow: visible;
-  opacity: 1;
-}
-
-.button-wrap:has(.custom-button:hover) .button-shadow {
-  filter: blur(clamp(2px, 0.0625em, 6px));
-  -webkit-filter: blur(clamp(2px, 0.0625em, 6px));
-  -moz-filter: blur(clamp(2px, 0.0625em, 6px));
-  -ms-filter: blur(clamp(2px, 0.0625em, 6px));
-  transition: filter var(--anim--hover-time) var(--anim--hover-ease);
-}
-
-.button-wrap:has(.custom-button:hover) .button-shadow::after {
-  top: calc(var(--shadow-cuttoff-fix) - 0.875em);
-  opacity: 1;
-}
-
-.button-wrap:has(.custom-button:active) {
-  transform: rotate3d(1, 0, 0, 25deg);
-}
-
-.button-wrap:has(.custom-button:active) .custom-button {
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.125em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0.225em 0.05em 0 rgba(0, 0, 0, 0.05),
-    0 0.25em 0 0 rgba(255, 255, 255, 0.75),
-    inset 0 0.25em 0.05em 0 rgba(0, 0, 0, 0.15);
-}
-
-.button-wrap:has(.custom-button:active) .button-shadow {
-  filter: blur(clamp(2px, 0.125em, 12px));
-  -webkit-filter: blur(clamp(2px, 0.125em, 12px));
-  -moz-filter: blur(clamp(2px, 0.125em, 12px));
-  -ms-filter: blur(clamp(2px, 0.125em, 12px));
-}
-
-.button-wrap:has(.custom-button:active) .button-shadow::after {
-  top: calc(var(--shadow-cuttoff-fix) - 0.5em);
-  opacity: 0.75;
-}
-
-.button-wrap:has(.custom-button:active) span {
-  text-shadow: 0.025em 0.25em 0.05em rgba(0, 0, 0, 0.12);
-}
-
 .project-btn {
-  display: block;
   margin: 1.2rem auto 0 auto;
-}
-
-.theme-toggle {
-  --border-width: clamp(1px, 0.0625em, 4px);
-  --angle-1: 0deg;
-  position: relative;
-  width: 60px;
-  height: 30px;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
-  border-radius: 999vw;
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0 0 0 rgba(255, 255, 255, 1);
-  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
+  display: block;
+  padding: 1rem 2.7rem;
+  font-size: 1.18rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 2rem;
+  background: rgba(255,255,255,0.22);
+  color: #222;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 2px 8px 0 rgba(31,38,135,0.10);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
   cursor: pointer;
+  transition: 
+    background 0.3s cubic-bezier(.4,0,.2,1),
+    color 0.3s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.3s cubic-bezier(.4,0,.2,1),
+    transform 0.18s;
 }
 
-.theme-toggle:hover {
-  transform: scale(0.975);
-  backdrop-filter: blur(0.01em);
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
-    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
-    0 0 0 0 rgba(255, 255, 255, 1);
-}
-
-.theme-toggle input {
-  display: none;
-}
-
-.theme-toggle label {
-  position: absolute;
-  inset: 0;
-  cursor: pointer;
-}
-
-.theme-toggle span {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 26px;
-  height: 26px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  transition: transform var(--anim--hover-time) var(--anim--hover-ease);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  pointer-events: none;
-}
-
-.theme-toggle input:checked + label span {
-  transform: translateX(30px);
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.theme-toggle::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  border-radius: 999vw;
-  width: calc(100% + var(--border-width));
-  height: calc(100% + var(--border-width));
-  top: calc(0% - var(--border-width) / 2);
-  left: calc(0% - var(--border-width) / 2);
-  padding: var(--border-width);
-  box-sizing: border-box;
-  background: conic-gradient(
-      from var(--angle-1) at 50% 50%,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0) 5% 40%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0) 60% 95%,
-      rgba(0, 0, 0, 0.5)
-    ),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease),
-    --angle-1 500ms ease;
-  box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
-}
-
-.theme-toggle:hover::after {
-  --angle-1: -125deg;
-}
-
-.theme-toggle:active::after {
-  --angle-1: -75deg;
-}
-
-.theme-toggle .glow {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.25s ease-out;
-  z-index: -1;
-  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.3) 0%, transparent 70%);
-}
-
-.theme-toggle:hover .glow {
-  opacity: 1;
+.project-btn:hover, .project-btn:focus {
+  background: rgba(37,99,235,0.13);
+  color: #2563eb;
+  box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.22), 0 4px 12px 0 rgba(31,38,135,0.12);
+  transform: translateY(-4px) scale(1.06);
 }
 
 /* ================================
@@ -1001,6 +446,7 @@ body.dark-theme .button-wrap .custom-button span {
   /* Header más pequeño y estable */
   header {
     padding: 0.8rem 0.5rem;
+    margin-top: 3.5rem; /* deja espacio para el botón menú */
   }
 
   header h1 {
@@ -1013,7 +459,7 @@ body.dark-theme .button-wrap .custom-button span {
 
   /* Evitar que el título empuje todo */
   body {
-    padding: 0 0.5rem 0 0.5rem;
+    padding: 0 0.5rem;
   }
 
   /* Galería en una sola columna */
@@ -1085,41 +531,11 @@ body.dark-theme .main-footer {
 }
 body.dark-theme .sidebar a {
   color: #f3f3f3 !important;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.02)
-  ) !important;
-  text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.3) !important;
+  background: rgba(255,255,255,0.05) !important;
 }
 body.dark-theme .sidebar a:hover {
+  background: rgba(255,255,255,0.18) !important;
   color: #ffe066 !important;
-  text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.4) !important;
-}
-body.dark-theme .theme-toggle {
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.02)
-  );
-}
-body.dark-theme .theme-toggle span {
-  background: rgba(255, 255, 255, 0.7);
-}
-body.dark-theme .theme-toggle input:checked + label span {
-  background: rgba(255, 255, 255, 0.7);
-}
-body.dark-theme .menu-toggle {
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.02)
-  );
-  color: #f3f3f3;
-  text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.3);
 }
 body.dark-theme .glass {
   background: rgba(30, 41, 59, 0.65) !important;
