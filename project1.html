@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -6,131 +6,128 @@
   <title>Project 1</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
   <button class="menu-toggle">☰</button>
 
-  <nav class="sidebar">
+  <nav class="sidebar glass">
     <h2>Menú</h2>
     <ul>
-      <li>
-        <div class="button-wrap">
-          <a href="index.html" class="custom-button"><span>Home</span></a>
-          <div class="button-shadow"></div>
-        </div>
-      </li>
-      <li>
-        <div class="button-wrap">
-          <a href="project1.html" class="custom-button"><span>Project 1</span></a>
-          <div class="button-shadow"></div>
-        </div>
-      </li>
-      <li>
-        <div class="button-wrap">
-          <a href="project2.html" class="custom-button"><span>Project 2</span></a>
-          <div class="button-shadow"></div>
-        </div>
-      </li>
-      <li>
-        <div class="button-wrap">
-          <a href="projects.html" class="custom-button"><span>Projects</span></a>
-          <div class="button-shadow"></div>
-        </div>
-      </li>
-      <li>
-        <div class="button-wrap">
-          <a href="contactar.html" class="custom-button"><span>Contact</span></a>
-          <div class="button-shadow"></div>
-        </div>
-      </li>
-      <li>
-        <div class="button-wrap">
-          <a href="https://github.com/" target="_blank" class="custom-button"><span>Repository</span></a>
-          <div class="button-shadow"></div>
-        </div>
-      </li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project1.html">Project 1</a></li>
+      <li><a href="project2.html">Project 2</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contactar.html">Contact</a></li>
     </ul>
   </nav>
 
-  <header class="header-anim">
+  <!-- CABECERA -->
+  <header class="glass header-anim">
     <h1>Project 1</h1>
+    <p>Gestión de incidencias mediante formulario inteligente</p>
   </header>
 
-  <div class="item" style="max-width:700px;margin-top:8rem;">
-    <p class="description">
-      In this presentation we will show you a program compatible with a form that we will also show below, to facilitate the management of a computer technician in charge of devices in an institute. The form would be designed for anyone who detects an error or failure in any of the systems, who through the survey could notify the technician, informing him about the basic information so that it can be organized.
-    </p>
-  </div>
+  <!-- CONTENIDO -->
+  <main style="max-width:1300px;width:90%;margin:auto;margin-top:7rem;">
 
-  <!-- Botón de tema arriba a la derecha -->
-  <div class="theme-toggle" style="position:fixed;top:15px;right:15px;z-index:4000;">
+    <div class="item glass" style="padding:3rem;border-width:2px;width:100%;max-width:1100px;margin:auto;">
+      <span class="glow"></span>
+
+      <header style="text-align:center;margin-bottom:1.5rem;">
+        <img src="img/Project1.png" alt="Project 1" style="width:100%;max-width:550px;border-radius:1.2rem;">
+        <h2 style="margin-top:1.2rem;">Sistema de Gestión de Incidencias</h2>
+      </header>
+
+      <p class="description" style="font-size:1.2rem;line-height:1.85;max-width:1000px;margin:auto;">
+        Este proyecto presenta un sistema diseñado para facilitar el trabajo de un técnico informático dentro de un instituto.
+        A través de un formulario claro e intuitivo, cualquier usuario puede reportar fallos o incidencias indicando el tipo
+        de dispositivo, la ubicación y una descripción del problema. El objetivo es transformar un proceso caótico en un flujo
+        de trabajo estructurado y fácil de gestionar.
+      </p>
+
+      <p class="description" style="font-size:1.2rem;line-height:1.85;max-width:1000px;margin:1.5rem auto 0;">
+        Toda la información recogida permite al técnico organizar las incidencias por prioridad, tipo de error y zona del centro,
+        mejorando la eficiencia y reduciendo el tiempo de respuesta. Este sistema está pensado para ser escalable, intuitivo y
+        adaptable a cualquier entorno educativo o empresarial.
+      </p>
+
+      <!-- BOTONES -->
+      <div class="button-wrap" style="margin-top:2.5rem;text-align:center;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
+
+        <!-- Botón volver -->
+        <button class="glass project-btn custom-button" onclick="window.location.href='index.html'">
+          <span>Volver al inicio</span>
+        </button>
+
+        <!-- Botón GitHub -->
+        <button class="glass project-btn custom-button" onclick="window.location.href='https://github.com/alexsampietro7e9-glitch/PROJECT-1.git'">
+          <span>Ver repositorio en GitHub</span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer glass">
+    <p><strong>Email:</strong> alex.sampietro.7e9@itb.cat</p>
+    <p><strong>Institute:</strong> Institut Tecnològic de Barcelona</p>
+    <p><strong>Name:</strong> Alex Sampietro</p>
+  </footer>
+
+  <!-- TOGGLE (NO SE HA ELIMINADO) -->
+  <div class="theme-switch" style="position:fixed;top:15px;right:15px;">
     <input type="checkbox" id="theme-toggle">
-    <label>
-      <span></span>
-    </label>
+    <label for="theme-toggle"></label>
   </div>
-
-  <!-- Fondo para transición fade -->
-  <div id="fade-bg"></div>
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Menú hamburguesa
-  const toggle = document.querySelector(".menu-toggle");
-  const sidebar = document.querySelector(".sidebar");
-  const body = document.body;
+  document.addEventListener("DOMContentLoaded", () => {
 
-  if (toggle && sidebar) {
+    const toggle = document.querySelector(".menu-toggle");
+    const sidebar = document.querySelector(".sidebar");
+    const body = document.body;
+
     toggle.addEventListener("click", () => {
       sidebar.classList.toggle("open");
       body.classList.toggle("menu-open");
     });
-  }
 
-  // Cerrar menú al hacer clic fuera
-  document.addEventListener("click", (e) => {
-    if (sidebar.classList.contains("open") && !sidebar.contains(e.target) && !toggle.contains(e.target)) {
-      sidebar.classList.remove("open");
-      body.classList.remove("menu-open");
-    }
-  });
+    /* Cerrar menú al clicar fuera */
+    document.addEventListener("click", (e) => {
+      if (
+        sidebar.classList.contains("open") &&
+        !sidebar.contains(e.target) &&
+        !toggle.contains(e.target)
+      ) {
+        sidebar.classList.remove("open");
+        body.classList.remove("menu-open");
+      }
+    });
 
-  // Transición fade en los enlaces internos
-  document.querySelectorAll('a[href]').forEach(link => {
-    if (link.hostname === window.location.hostname && !link.hasAttribute('target')) {
-      link.addEventListener('click', function(e) {
-        if (link.getAttribute('href').startsWith('#')) return;
-        e.preventDefault();
-        document.body.classList.add('fade-out');
-        setTimeout(() => {
-          window.location = link.href;
-        }, 400);
-      });
-    }
-  });
+    const themeToggle = document.getElementById("theme-toggle");
 
-  // Tema claro/oscuro
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeToggleDiv = document.querySelector('.theme-toggle');
-  function setTheme(dark) {
-    if (dark) {
-      document.body.classList.add('dark-theme');
-      themeToggle.checked = true;
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-theme');
-      themeToggle.checked = false;
-      localStorage.setItem('theme', 'light');
+    function setTheme(dark) {
+      if (dark) {
+        document.body.classList.add("dark-theme");
+        themeToggle.checked = true;
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.body.classList.remove("dark-theme");
+        themeToggle.checked = false;
+        localStorage.setItem("theme", "light");
+      }
     }
-  }
-  themeToggleDiv.addEventListener('click', () => {
-    themeToggle.checked = !themeToggle.checked;
-    setTheme(themeToggle.checked);
+
+    themeToggle.addEventListener("change", () => setTheme(themeToggle.checked));
+
+    if (localStorage.getItem("theme") === "dark") setTheme(true);
+
   });
-  // Mantener tema al recargar
-  if (localStorage.getItem('theme') === 'dark') setTheme(true);
-});
-</script>
+  </script>
 
 </body>
 </html>
